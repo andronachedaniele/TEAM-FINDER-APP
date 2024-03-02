@@ -1,0 +1,48 @@
+.register-container2 {
+    background-image:url('/assets/images/background.webp');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .label-with-placeholder {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 30px; /* Increase font size */
+    font-weight: bold; /* Optionally increase font weight */
+  }
+  
+  .input-field {
+    width: 101%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .input-field:focus::placeholder {
+    color: transparent; /* Hide placeholder text when input is focused */
+  }
+  
+  .submit-button {
+    width: 80%;
+    padding: 5px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    color: #ccc;
+    cursor: pointer;
+    margin-left: 13%;
+  }
+  
+  .submit-button:hover {
+    background-color: #4b4b77;
+  }
+  

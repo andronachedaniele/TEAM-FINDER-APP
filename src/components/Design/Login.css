@@ -1,0 +1,82 @@
+ .border-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 30px; /* Adjust the border thickness here */
+    box-sizing: border-box;
+    background: linear-gradient(to bottom right, #4e3393, #973bed); /* Purple border color */
+  }
+  
+  .login-container {
+    display: flex;
+    width: calc(100% - 60px); /* Subtract the border thickness */
+    height: calc(100% - 60px); /* Subtract the border thickness */
+    box-sizing: border-box;
+    overflow: hidden; /* Prevents any potential overflow due to border */
+  }
+  
+  .left-side, .right-side {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .left-side {
+    flex:1.6;
+    background-image: url('/assets/images/background.webp');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .right-side {
+    flex:1;
+    background-color: #f5f5f5;
+  }
+  
+  .form-container input {
+    display: block;
+    margin: 20px auto; /* Increased distance and centered */
+    padding: 10px;
+    width: 80%; /* Smaller width for the input boxes */
+    border: 1px solid #ccc; /* Optional: adds a border to the input boxes */
+  }
+  
+  /* Updated styles for milder green buttons */
+  .right-side button {
+    display: block;
+    margin: 20px auto; /* Centered button */
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Milder green */
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .right-side button:hover {
+    background-color: #39853d; /* A slightly darker milder green for hover effect */
+  }
+  
+  .register-container {
+    text-align: center;
+    margin-top: 50px; /* Adjust as needed */
+  }
+  .left-side h2 {
+    color: white; /* Set text color to white */
+    font-size: 100px; /* Adjust the font size of h2 */
+    margin-bottom: 50px;
+  }
+  
+  .left-side p {
+    color: white; /* Set text color to white */
+    word-wrap: break-word; /* Allow long words to break and wrap onto the next line */
+    width: 60%; /* Set the width to 80% to control the spread of the paragraph */
+    margin-bottom: 200px;
+  }
+  .right-side h2 {
+    color: #4e3393; /* Set text color to white */
+    font-size: 50px; /* Adjust the font size of h2 */
+    margin-bottom: 0px;
+  }
