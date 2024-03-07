@@ -15,7 +15,11 @@ function Register() {
     event.preventDefault();
     const formData = {
       name,
+<<<<<<< HEAD
       email,
+=======
+      address,
+>>>>>>> 58646d8df631a75b846a73e51ce86a9730ae3eba
       password, // Reminder: Implement password hashing on the server-side
       organizationName,
       headquartersAddress,
