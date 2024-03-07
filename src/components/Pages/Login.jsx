@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../Design/Login.css'; // Ensure you have a Login.css file in the same directory
+import '../Design/Login.css'; 
 import {Link} from 'react-router-dom';
 
 function Login() {
