@@ -1,99 +1,118 @@
-import React, { useState } from 'react';
-import '../Design/Register.css';
+import React, { useState } from "react";
+import "../Design/Register.css"; // Ensure this path matches your CSS file's location
 
 function Register() {
   // State variables for form fields
-  const [name, setName] = useState('');
-  const [address, setAddress] = useState('');
-  const [password, setPassword] = useState('');
-  const [organizationName, setOrganizationName] = useState('');
-  const [headquartersAddress, setHeadquartersAddress] = useState('');
-
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState("");
+  const [organizationName, setOrganizationName] = useState("");
+  const [headquartersAddress, setHeadquartersAddress] = useState("");
+  // Added a state variable for displaying messages to the user
+  const [message, setMessage] = useState("");
   // Function to handle form submission
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // Form submission logic goes here
+    const formData = {
+      name,
+      email,
+      password, // Reminder: Implement password hashing on the server-side
+      organizationName,
+      headquartersAddress,
+    };
+
+    // Attempt to send the formData to the server
+    try {
+      const response = await fetch("http://localhost:3000/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+      if (response.ok) {
+        setMessage("Success: Organization registered successfully");
+        console.log("Success:", data);
+        // Optionally clear the form here
+      } else {
+        throw new Error(
+          data.message || "An error occurred during registration."
+        );
+      }
+    } catch (error) {
+      console.error("Registration error:", error);
+      setMessage(`Registration failed: ${error.message}`);
+    }
   };
 
   return (
-    <div>
-        
     <div className="register-container2">
-      <form onSubmit={handleSubmit}>
-        {/* Form inputs */}
-        {/* Add input fields for name, address, password, organization name, headquarters address */}
-        <h2 color='white'> Sign Up as Organization Administrator</h2> 
+      <form onSubmit={handleSubmit} className="register-form">
+        <h2>Sign Up as Organization Administrator</h2>
+        {/* Input fields */}
         <div className="form-group">
-          <label htmlFor="name" className="label-with-placeholder">
-            <input
-              type="text"
-              id="name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-              className="input-field"
-              placeholder="Enter your name"
-            />
-          </label>
+          <input
+            type="text"
+            id="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+            className="input-field"
+            placeholder="Enter your name"
+          />
         </div>
         <div className="form-group">
-          <label htmlFor="address" className="label-with-placeholder">
-            
-            <input
-              type="text"
-              id="address"
-              value={address}
-              onChange={(e) => setAddress(e.target.value)}
-              required
-              className="input-field"
-              placeholder="Enter your address"
-            />
-          </label>
+          <input
+            type="email" // Changed from "text" to "email" for proper validation and keyboard
+            id="email" // Changed from "address" to "email"
+            value={email} // Assumes you have a corresponding state variable `email`
+            onChange={(e) => setEmail(e.target.value)} // Assumes you have a setter function `setEmail`
+            required
+            className="input-field"
+            placeholder="Enter your email address" // Updated placeholder text
+          />
         </div>
         <div className="form-group">
-          <label htmlFor="password" className="label-with-placeholder">
-            
-            <input
-              type="password"
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              className="input-field"
-              placeholder="Enter your password"
-            />
-          </label>
+          <input
+            type="password"
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            className="input-field"
+            placeholder="Enter your password"
+          />
         </div>
         <div className="form-group">
-          <label htmlFor="organizationName" className="label-with-placeholder">
-            
-            <input
-              type="text"
-              id="organizationName"
-              value={organizationName}
-              onChange={(e) => setOrganizationName(e.target.value)}
-              required
-              className="input-field"
-              placeholder="Enter organization name"
-            />
-          </label>
+          <input
+            type="text"
+            id="organizationName"
+            value={organizationName}
+            onChange={(e) => setOrganizationName(e.target.value)}
+            required
+            className="input-field"
+            placeholder="Enter organization name"
+          />
         </div>
         <div className="form-group">
-          <label htmlFor="headquartersAddress" className="label-with-placeholder">
-            <input
-              type="text"
-              id="headquartersAddress"
-              value={headquartersAddress}
-              onChange={(e) => setHeadquartersAddress(e.target.value)}
-              required
-              className="input-field"
-              placeholder="Enter headquarters address"
-            />
-          </label>
+          <input
+            type="text"
+            id="headquartersAddress"
+            value={headquartersAddress}
+            onChange={(e) => setHeadquartersAddress(e.target.value)}
+            required
+            className="input-field"
+            placeholder="Enter headquarters address"
+          />
         </div>
-        <button type="submit" className="submit-button">Register</button>
+        <button type="submit" className="submit-button">
+          Register
+        </button>
+        {/* Display feedback message */}
+        {message && <div className="message">{message}</div>}
       </form>
-    </div>
     </div>
   );
 }
