@@ -1,14 +1,35 @@
 import React, { useState } from 'react';
-import '../Design/Login.css'; 
-import {Link} from 'react-router-dom';
+import '../Design/Login.css';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log('Submitting', email, password);
+
+    try {
+      const response = await fetch('http://localhost:3000/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        // Assuming the token is returned in the response
+        localStorage.setItem('token', data.token); // Save token
+        navigate('/dashboard'); // Redirect to the dashboard
+      } else {
+        alert(data.message);
+      }
+    } catch (error) {
+      console.error('Login error:', error);
+      alert('An error occurred during login.');
+    }
   };
 
   return (
@@ -35,18 +56,13 @@ function Login() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <Link to="/register-employee">
-              <button type="submit">
-                Log in
-              </button>
-            </Link>
+            <button type="submit">Log in</button>
           </form>
           <div className="register-container">
             <p>Do you wish to use our software in your company?</p>
             <Link to="/register-organization">
               <button>Register now</button>
             </Link>
-            
           </div>
         </div>
       </div>
