@@ -1,27 +1,47 @@
 import React, { useState } from 'react';
 import '../Design/RegisterEmployee.css'; // Import your CSS file for styling (if needed)
 
-function Register() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    password: ''
-  });
+function EmployeeRegister() {
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prevState => ({
-      ...prevState,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = (event) => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // Aici poți adăuga cod pentru gestionarea trimiterii datelor către un server backend
-    console.log('Submitted:', formData);
-    // De asemenea, poți apela aici o funcție pentru a trimite datele către backend
-    // fetch sau altă metodă pentru a trimite datele la server
+    const formData = {
+      name,
+      email,
+      password,
+    };
+
+    try {
+      const urlParams = new URLSearchParams(window.location.search);
+      const referralCode = urlParams.get('referral');
+      const url = `http://localhost:3000/empregister?referral=${referralCode}`;
+
+
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application.json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+      if (response.ok) {
+        setMessage("Success: Account registered successfully");
+        console.log("Success:", data);
+      } else {
+        throw new Error(
+          data.message || "An error occurred during registration."
+        );
+      }
+    } catch (error) {
+      console.error("Registration error:", error);
+      setMessage(`Registration failed: ${error.message}`);
+    }
   };
 
   return (
@@ -37,8 +57,8 @@ function Register() {
           <input
             type="text"
             name="name"
-            value={formData.name}
-            onChange={handleChange}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             required
             className="input-field"
             placeholder="Name"
@@ -48,8 +68,8 @@ function Register() {
           <input
             type="email"
             name="email"
-            value={formData.email}
-            onChange={handleChange}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             required
             className="input-field"
             placeholder="E-mail address"
@@ -59,8 +79,8 @@ function Register() {
           <input
             type="password"
             name="password"
-            value={formData.password}
-            onChange={handleChange}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             required
             className="input-field"
             placeholder="Password"
@@ -68,10 +88,11 @@ function Register() {
         </div>
         <div className="container">
           <button type="submit">Register</button>
+          {message && <div className="message">{message}</div>}
         </div>
       </form>
     </div>
   );
 }
 
-export default Register;
+export default EmployeeRegister;

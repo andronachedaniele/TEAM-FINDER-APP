@@ -8,8 +8,10 @@ function Register() {
   const [password, setPassword] = useState("");
   const [organizationName, setOrganizationName] = useState("");
   const [headquartersAddress, setHeadquartersAddress] = useState("");
+  
   // Added a state variable for displaying messages to the user
   const [message, setMessage] = useState("");
+  
   // Function to handle form submission
   const handleSubmit = async (event) => {
     event.preventDefault();
