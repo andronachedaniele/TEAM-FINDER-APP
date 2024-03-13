@@ -18,7 +18,7 @@ function EmployeeRegister() {
     try {
       const urlParams = new URLSearchParams(window.location.search);
       const referralCode = urlParams.get('referral');
-      const url = `http://localhost:3000/empregister?referral=${referralCode}`;
+      const url = `http://localhost:5173/empregister`;
 
 
       const response = await fetch(url, {
