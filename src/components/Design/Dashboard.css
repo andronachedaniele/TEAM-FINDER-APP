@@ -45,7 +45,34 @@
     flex-wrap: wrap;
     justify-content: space-between;
   }
-
+  .employee-list-container {
+    margin-bottom: 20px;
+  }
+  
+  .toggle-button {
+    background-color: #5730b9; /* Purple color */
+    color: #fff;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+  }
+  
+  .toggle-button:hover {
+    background-color: #4b0774; /* Darker shade of purple */
+    
+  }
+  
+  .toggle-button.active {
+    background-color: #5730b9; /* Lighter shade of purple */
+  }
+  
+  .toggle-button.active:hover {
+    background-color: #6700a6; /* Darker shade of active purple */
+  }
+  
   .content-box {
     flex: 0 0 calc(33.33% - 20px);
     background-color: #f0f0f0;

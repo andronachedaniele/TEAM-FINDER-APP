@@ -36,16 +36,15 @@ const Dashboard = () => {
                 <p>This is your dashboard.</p>
             </div>
             <div className="content-section">
-                <div className="content-box">Activate employee sign-up link</div>
-                <div className="content-box">Content Box 2</div>
-                <div className="content-box">
-                    {/* Button to show/hide the employee list */}
-                    <button onClick={toggleEmployeeList}>
-                        {showEmployeeList ? "Hide Employee List" : "Show Employee List"}
-                    </button>
-                    {/* Conditional rendering of the EmployeeList component */}
-                    {showEmployeeList && <EmployeesList />}
-                </div>
+                
+            <div className="employee-list-container">
+    {/* Button to show/hide the employee list */}
+    <button className={`toggle-button ${showEmployeeList ? 'active' : ''}`} onClick={toggleEmployeeList}>
+        {showEmployeeList ? "Hide Employee List" : "Show Employee List"}
+    </button>
+    {/* Conditional rendering of the EmployeeList component */}
+    {showEmployeeList && <EmployeesList />}
+</div>
             </div>
         </div>
     );
