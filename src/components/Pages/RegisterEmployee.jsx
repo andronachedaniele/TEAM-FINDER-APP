@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../Design/RegisterEmployee.css'; // Import your CSS file for styling (if needed)
 
 function EmployeeRegister() {
-
+  const [searchParams, setSearchParams] = useSearchParams();
   const [name, setName] = useState("");
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState("");
@@ -16,9 +16,8 @@ function EmployeeRegister() {
     };
 
     try {
-      const urlParams = new URLSearchParams(window.location.search);
-      const referralCode = urlParams.get('referral');
-      const url = `http://localhost:5173/empregister`;
+      const referralCode = searchParams.get('referral');
+      const url = `http://localhost:5173/empregister?referral=${referralCode}`;
 
 
       const response = await fetch(url, {
