@@ -32,6 +32,7 @@
 
 .small-button {
     font-size: 12px; /* Set the font size */
-    padding: 2px 4px; /* Set the padding */
+    padding: 4px 4px; /* Set the padding */
     margin: 0 10px; /* Set the margin */
+    flex: auto;
 }

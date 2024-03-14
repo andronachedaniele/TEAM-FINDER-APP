@@ -6,6 +6,7 @@ const EmployeesList = () => {
     const pageSize = 7;
     const names = ["Adriana", "Radu", "Samuel", "Irina", "Denis", "Laura",  "Veronica", "Stefan", "Onisim", "Sefora","Laurentiu","Golan", "Andrada", "Tudor", "Relu", "Simon"];
 
+    
     const getNamesForPage = () => {
         const startIndex = (currentPage - 1) * pageSize;
         const endIndex = startIndex + pageSize;
@@ -36,9 +37,9 @@ const EmployeesList = () => {
                 ))}
             </ul>
             <div className="pagination">
-                <button onClick={handlePreviousPage} disabled={currentPage === 1}>&#8249;</button>
-                <span>{currentPage}</span>
-                <button onClick={handleNextPage} disabled={(currentPage * pageSize) >= names.length}>&#8250;</button>
+                <button className="small-button" onClick={handlePreviousPage} disabled={currentPage === 1}>&#8249;</button>
+                <span className="small-button">{currentPage}</span>
+                <button className="small-button" onClick={handleNextPage} disabled={(currentPage * pageSize) >= names.length}>&#8250;</button>
             </div>
         </div>
     );

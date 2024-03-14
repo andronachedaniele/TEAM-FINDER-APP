@@ -28,7 +28,7 @@ const Dashboard = () => {
                     <li><a href="/profile">Profile</a></li>
                     <li><a href="/settings">Settings</a></li>
                     {/* Update the Logout list item */}
-                    <li><button onClick={handleLogout}>Logout</button></li>
+                    <li><button className="dashboard-nav" onClick={handleLogout}>Logout</button></li>
                 </ul>
             </nav>
             <div className="welcome-section">
@@ -38,7 +38,6 @@ const Dashboard = () => {
             <div className="content-section">
                 <div className="content-box">Activate employee sign-up link</div>
                 <div className="content-box">Content Box 2</div>
-                <div className="content-box">Content Box 3</div>
                 <div className="content-box">
                     {/* Button to show/hide the employee list */}
                     <button onClick={toggleEmployeeList}>
