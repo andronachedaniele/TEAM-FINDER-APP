@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "../Design/Dashboard.css";
 import { useNavigate } from "react-router-dom";
 import EmployeesList from "../Elements/EmployeeList";
 
 const Dashboard = () => {
     const navigate = useNavigate(); // Hook for navigation
+    const [showEmployeeList, setShowEmployeeList] = useState(false); // State to control the visibility of the employee list
 
     // Logout function
     const handleLogout = () => {
@@ -13,6 +14,11 @@ const Dashboard = () => {
 
         // Redirect to login page or home page
         navigate('/');
+    };
+
+    // Function to toggle the visibility of the employee list
+    const toggleEmployeeList = () => {
+        setShowEmployeeList(!showEmployeeList);
     };
 
     return (
@@ -32,8 +38,15 @@ const Dashboard = () => {
             <div className="content-section">
                 <div className="content-box">Activate employee sign-up link</div>
                 <div className="content-box">Content Box 2</div>
-                <EmployeesList/>
                 <div className="content-box">Content Box 3</div>
+                <div className="content-box">
+                    {/* Button to show/hide the employee list */}
+                    <button onClick={toggleEmployeeList}>
+                        {showEmployeeList ? "Hide Employee List" : "Show Employee List"}
+                    </button>
+                    {/* Conditional rendering of the EmployeeList component */}
+                    {showEmployeeList && <EmployeesList />}
+                </div>
             </div>
         </div>
     );

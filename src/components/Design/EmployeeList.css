@@ -1,27 +1,37 @@
-/* În fișierul Dashboard.css sau orice alt fișier CSS relevant */
-ul {
-    list-style-type: none; /* Elimină stilul de marcator */
-    padding: 0; /* Elimină marginile interne ale listei */
-    margin: 0; /* Elimină marginile externe ale listei */
-}
-.pagination {
-    margin-top: 20px; /* Adaugă spațiu între butoanele de paginare și conținutul boxului */
-    display: flex; /* Utilizează flexbox pentru a alinia elementele */
-    justify-content: center; /* Aliniază elementele în centru */
-    align-items: center; /* Alignează vertical elementele */
+/* In the EmployeeList.css file */
+
+.employee-list {
+    margin-top: 20px; /* Add space above the employee list */
 }
 
-.pagination-display {
-    margin-bottom: 10px; /* Adaugă spațiu între afișajul de pagini și butoanele de navigare */
+.employee-list h2 {
+    margin-bottom: 10px; /* Add space below the heading */
+}
+
+.employee-list ul {
+    list-style-type: none; /* Remove the list-style */
+    padding: 0; /* Remove the padding */
+    margin: 0; /* Remove the margin */
+}
+
+.employee-list li {
+    margin-bottom: 5px; /* Add space between each employee */
+}
+
+.employee-role {
+    float: right; /* Align the employee role to the right */
+    margin-left: 10px; /* Add space between the name and role */
+}
+
+.pagination {
+    margin-top: 20px; /* Add space above the pagination */
+    display: flex; /* Use flexbox to align the elements */
+    justify-content: center; /* Align items horizontally */
+    align-items: center; /* Align items vertically */
 }
 
 .small-button {
-    font-size: 12px; /* Dimensiunea textului */
-    padding: 2px 4px; /* Spațierea internă */
-    margin-right: 20px; /* Adaugă spațiu între butoane */
-    margin-left: 20px;
-}
-.employee-text {
-    float: right;
-    margin-left: 10px; 
+    font-size: 12px; /* Set the font size */
+    padding: 2px 4px; /* Set the padding */
+    margin: 0 10px; /* Set the margin */
 }
