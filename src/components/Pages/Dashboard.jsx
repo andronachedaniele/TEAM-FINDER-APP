@@ -1,6 +1,7 @@
 import React from "react";
 import "../Design/Dashboard.css";
 import { useNavigate } from "react-router-dom";
+import EmployeesList from "../Elements/EmployeeList";
 
 const Dashboard = () => {
     const navigate = useNavigate(); // Hook for navigation
@@ -31,6 +32,7 @@ const Dashboard = () => {
             <div className="content-section">
                 <div className="content-box">Activate employee sign-up link</div>
                 <div className="content-box">Content Box 2</div>
+                <EmployeesList/>
                 <div className="content-box">Content Box 3</div>
             </div>
         </div>
