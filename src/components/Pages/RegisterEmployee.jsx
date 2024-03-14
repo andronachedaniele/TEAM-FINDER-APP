@@ -1,14 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState ,useEffect } from 'react';
 import '../Design/RegisterEmployee.css'; // Import your CSS file for styling (if needed)
+import { useSearchParams } from 'react-router-dom';
 
 function EmployeeRegister() {
-  const [searchParams, setSearchParams] = useSearchParams();
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [loading, setLoading]=useState(false);
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setLoading(true);
     const formData = {
       name,
       email,
@@ -16,18 +20,18 @@ function EmployeeRegister() {
     };
 
     try {
-      const referralCode = searchParams.get('referral');
-      const url = `http://localhost:5173/empregister?referral=${referralCode}`;
-
+      const referralCode=searchParams.get("referral");
+      const url = `http://localhost:3000/empregister?referral=${referralCode}`;
+      console.log(referralCode);
 
       const response = await fetch(url, {
         method: "POST",
         headers: {
-          "Content-Type": "application.json",
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
-
+      console.log(response);
       const data = await response.json();
       if (response.ok) {
         setMessage("Success: Account registered successfully");
@@ -41,6 +45,7 @@ function EmployeeRegister() {
       console.error("Registration error:", error);
       setMessage(`Registration failed: ${error.message}`);
     }
+    setLoading(false);
   };
 
   return (
@@ -86,7 +91,7 @@ function EmployeeRegister() {
           />
         </div>
         <div className="container">
-          <button type="submit">Register</button>
+          <button type="submit" disabled={loading}>Register</button>
           {message && <div className="message">{message}</div>}
         </div>
       </form>
