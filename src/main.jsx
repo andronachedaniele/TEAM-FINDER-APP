@@ -21,7 +21,7 @@ const router = createBrowserRouter([
     element: <Register />,
   },
   {
-    path:'/empregister:referral',
+    path:'/empregister',
     element: <RegisterEmployee />,
   },
   {
