@@ -3,7 +3,7 @@ import '../Design/RegisterEmployee.css'; // Import your CSS file for styling (if
 import { useSearchParams } from 'react-router-dom';
 
 function EmployeeRegister() {
-
+  console.log("hello");
   const [name, setName] = useState("");
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState("");
@@ -53,7 +53,7 @@ function EmployeeRegister() {
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <div className="register-title-box">
-            <h1 className="register-title">Numele firmei</h1>
+            <h1 className="register-title">"Numele firmei"</h1>
           </div>
           <div className="register-title-box">
             <h1 className="register-title">Register user / Sign-up page</h1>
