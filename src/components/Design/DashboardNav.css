@@ -1,0 +1,29 @@
+
+.dashboard-nav {
+    background-color: #5730b9;
+    color: #fff;
+    padding: 10px 20px; 
+    border-radius: 0 0 20px 20px; 
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.dashboard-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dashboard-nav ul li {
+    display: inline-block;
+    margin-right: 10px;
+    width: auto;
+}
+
+.dashboard-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    width: auto;
+}
+

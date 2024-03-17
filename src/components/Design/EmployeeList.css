@@ -1,45 +1,40 @@
-/* In the EmployeeList.css file */
-
 .employee-list {
-    margin-top: 20px; /* Add space above the employee list */
+    display: block;
+    margin-top: 20px; 
+    width: 390px;
+    outline: 2px solid #a730b9;
+    padding: 30px;
+    height: 325px;
+    overflow-y: auto; 
 }
 
 .employee-list h2 {
-    margin-bottom: 10px; /* Add space below the heading */
+    margin-bottom: 10px;
 }
 
 .employee-list ul {
-    list-style-type: none; /* Remove the list-style */
-    padding: 0; /* Remove the padding */
-    margin: 0; /* Remove the margin */
-    
-}
-
-.employee-list li {
-    margin-bottom: 5px; /* Add space between each employee */
-    
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0; 
 }
 
 .employee-role {
-    float: right; /* Align the employee role to the right */
-    margin-left: 10px; /* Add space between the name and role */
-    
+    float: right; 
+    margin-left: 10px;
 }
 
 .pagination {
-    margin-top: 20px; /* Add space above the pagination */
-    display: flex; /* Use flexbox to align the elements */
-    justify-content: center; /* Align items horizontally */
-    align-items: center; /* Align items vertically */
-    
-    
+    margin-top: 20px; 
+    display: flex;
+    align-items: center;
 }
 
 .small-button {
-    font-size: 12px; /* Set the font size */
-    padding: 4px 4px; /* Set the padding */
-    margin: 0 10px; /* Set the margin */
+    font-size: 12px; 
+    padding: 4px 4px; 
+    margin: 0 10px; 
     flex: auto;
-    
-    
+    color: black;
+    width: fit-content;
+    background-color:#c961d922
 }

@@ -1,93 +1,54 @@
-.dashboard {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
 
-  .dashboard-nav {
-    background-color: #5730b9;
-    color: #fff;
-    padding: 10px;
-    margin-bottom: 20px;
-  }
+.welcome-section {
+  margin-top: 20px;
+  text-align: center;
+}
 
-  .dashboard-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
+.content-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
 
-  .dashboard-nav ul li {
-    display: inline-block;
-    margin-right: 10px;
-  }
+.employee-list-container {
+  margin-bottom: 20px;
+}
 
-  .dashboard-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-  }
+.toggle-button {
+  width: 390px;
+  background-color: #5730b9;
+  color: #fff;
+  border: none;
+  padding: 10px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
-  .dashboard-nav ul li a:hover {
-    background-color: #565555;
-  }
+.toggle-button.active {
+  background-color: #a730b9;
+}
 
+.toggle-button.active:hover {
+  background-color: #6700a6;
+}
 
-  .welcome-section {
-    text-align: center;
-    margin-bottom: 20px;
-  }
+.content-box {
+  flex: 0 0 calc(33.33% - 20px);
+  background-color: #f0f0f0;
+  padding: 20px;
+  margin-bottom: 20px;
+}
 
-  .content-section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  .employee-list-container {
-    margin-bottom: 20px;
-  }
-  
-  .toggle-button {
-    background-color: #5730b9; /* Purple color */
-    color: #fff;
-    border: none;
-    padding: 10px 10px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    
-  }
-  
-  .toggle-button:hover {
-    background-color: #4b0774; /* Darker shade of purple */
-    
-  }
-  
-  .toggle-button.active {
-    background-color: #5730b9; /* Lighter shade of purple */
-  }
-  
-  .toggle-button.active:hover {
-    background-color: #6700a6; /* Darker shade of active purple */
-  }
-  
+@media (max-width: 768px) {
   .content-box {
-    flex: 0 0 calc(33.33% - 20px);
-    background-color: #f0f0f0;
-    padding: 20px;
-    margin-bottom: 20px;
-  }
-
-  @media (max-width: 768px) {
-    .content-box {
       flex: 0 0 calc(50% - 20px);
-    }
   }
+}
 
-  @media (max-width: 480px) {
-    .content-box {
+@media (max-width: 480px) {
+  .content-box {
       flex: 0 0 100%;
-    }
   }
+}
+

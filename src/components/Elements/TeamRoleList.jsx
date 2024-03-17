@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../Design/EmployeeList.css";
 
-const EmployeesList = () => {
+const TeamRoleList = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const pageSize = 7;
     const names = ["Adriana", "Radu", "Samuel", "Irina", "Denis", "Laura",  "Veronica", "Stefan", "Onisim", "Sefora","Laurentiu","Golan", "Andrada", "Tudor", "Relu", "Simon"];
@@ -26,7 +26,7 @@ const EmployeesList = () => {
 
     return (
         <div className="employee-list">
-            <h2>Employees List</h2>
+            <h2>Team Role List</h2>
             <ul>
                 {getNamesForPage().map((name, index) => (
                     <li key={index}>
@@ -46,4 +46,4 @@ const EmployeesList = () => {
     );
 }
 
-export default EmployeesList;
+export default TeamRoleList;

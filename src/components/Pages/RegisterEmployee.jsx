@@ -53,7 +53,7 @@ function EmployeeRegister() {
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <div className="register-title-box">
-            <h1 className="register-title">"Numele firmei"</h1>
+            <h1 className="register-title">Numele firmei</h1>
           </div>
           <div className="register-title-box">
             <h1 className="register-title">Register user / Sign-up page</h1>

@@ -9,6 +9,7 @@ import RegisterEmployee from "./components/Pages/RegisterEmployee.jsx";
 import PageNotFound from "./components/Pages/PageNotFound.jsx";
 import Dashboard from "./components/Pages/Dashboard.jsx";
 import ProtectedRoute from "./components/Pages/ProtectedRoute.jsx";
+import Profile from './components/Pages/Profile.jsx';
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,14 @@ const router = createBrowserRouter([
     element: (
       <ProtectedRoute>
         <Dashboard />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: '/profile',
+    element: (
+      <ProtectedRoute>
+        <Profile />
       </ProtectedRoute>
     ),
   }
