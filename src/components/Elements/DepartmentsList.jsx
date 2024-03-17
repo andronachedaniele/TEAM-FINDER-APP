@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { getNamesForPage } from '../utils.jsx';
+
 import "../Design/List.css";
 
-const EmployeesList = () => {
+const DepartmentsList = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const pageSize = 7;
     const names = ["Adriana", "Radu", "Samuel", "Irina", "Denis", "Laura",  "Veronica", "Stefan", "Onisim", "Sefora","Laurentiu","Golan", "Andrada", "Tudor", "Relu", "Simon"];
@@ -21,7 +22,7 @@ const EmployeesList = () => {
 
     return (
         <div className="list">
-            <h2>Employees List</h2>
+            <h2>Departments List</h2>
             <ul>
                 {getNamesForPage(currentPage, pageSize, names).map((name, index) => (
                     <li key={index}>
@@ -36,8 +37,9 @@ const EmployeesList = () => {
                     <button className="small-button" onClick={handleNextPage} disabled={(currentPage * pageSize) >= names.length}>&#8250;</button>
                 
             </footer>
+            
         </div>
     );
 }
 
-export default EmployeesList;
+export default DepartmentsList;

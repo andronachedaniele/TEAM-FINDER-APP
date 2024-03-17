@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../Design/EmployeeList.css";
+import "../Design/List.css";
 
 const TeamRoleList = () => {
     const [currentPage, setCurrentPage] = useState(1);
@@ -25,13 +25,13 @@ const TeamRoleList = () => {
     };
 
     return (
-        <div className="employee-list">
+        <div className="list">
             <h2>Team Role List</h2>
             <ul>
                 {getNamesForPage().map((name, index) => (
                     <li key={index}>
                         <span>{name}</span>
-                        <span className="employee-role">Employee</span>
+                        <span className="role">Employee</span>
                     </li>
                 ))}
             </ul>

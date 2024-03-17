@@ -2,8 +2,10 @@ import React from "react";
 import { NavLink } from "react-router-dom"; 
 import '../Design/DashboardNav.css'
 import handleLogout from"../Pages/Dashboard";
+import PropTypes from "prop-types"; 
 
-const DashboardNav = ( handleLogout ) => {
+
+const DashboardNav = ( {handleLogout }) => {
     return (
         <nav className="dashboard-nav">
             <ul>
@@ -22,6 +24,9 @@ const DashboardNav = ( handleLogout ) => {
             </ul>
         </nav>
     );
+};
+DashboardNav.propTypes = {
+    handleLogout: PropTypes.func.isRequired
 };
 
 export default DashboardNav;

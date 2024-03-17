@@ -5,11 +5,13 @@ import { useNavigate } from "react-router-dom";
 import DashboardNav from "../Elements/DashboardNav";
 import EmployeesList from "../Elements/EmployeeList";
 import TeamRoleList from "../Elements/TeamRoleList";
+import DepartmentsList from "../Elements/DepartmentsList";
 
 const Dashboard = () => {
     const navigate = useNavigate();
     const [showEmployeeList, setShowEmployeeList] = useState(false); 
     const [ShowTeamRoleList, setShowTeamRoleList] = useState(false);
+    const [ShowDepartmentsList, setShowDepartmentsList] =useState(false);
     const [authenticated, setAuthenticated] = useState(false); 
 
     useEffect(() => {
@@ -32,6 +34,9 @@ const Dashboard = () => {
     const toggleTeamRoleList = () => {
         setShowTeamRoleList(!ShowTeamRoleList);
     }
+    const toggleDepartmentsList = () => {
+        setShowDepartmentsList(!ShowDepartmentsList);
+    };
 
     return (
         <div className="dashboard">
@@ -58,6 +63,15 @@ const Dashboard = () => {
                         {ShowTeamRoleList ? "Hide Team Role List" : "Show Team Role List"}
                     </button>
                     {ShowTeamRoleList && <TeamRoleList/>}
+                </div>
+                <div className="departments-list-container">
+                    <button
+                        className={`toggle-button ${ShowDepartmentsList ? 'active' : ''}`}
+                        onClick={toggleDepartmentsList}
+                    >
+                        {ShowDepartmentsList ? "Hide Departments List" : "Show Departments List"}
+                    </button>
+                    {ShowDepartmentsList && <DepartmentsList/>}
                 </div>
             </div>
         </div>

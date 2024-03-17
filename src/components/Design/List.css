@@ -1,4 +1,4 @@
-.employee-list {
+.list {
     display: block;
     margin-top: 20px; 
     width: 390px;
@@ -8,17 +8,17 @@
     overflow-y: auto; 
 }
 
-.employee-list h2 {
+.list h2 {
     margin-bottom: 10px;
 }
 
-.employee-list ul {
+.list ul {
     list-style-type: none; 
     padding: 0; 
     margin: 0; 
 }
 
-.employee-role {
+.role {
     float: right; 
     margin-left: 10px;
 }
