@@ -10,6 +10,7 @@ import PageNotFound from "./components/Pages/PageNotFound.jsx";
 import Dashboard from "./components/Pages/Dashboard.jsx";
 import ProtectedRoute from "./components/Pages/ProtectedRoute.jsx";
 import Profile from './components/Pages/Profile.jsx';
+import Settings from './components/Pages/Settings.jsx'; 
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,14 @@ const router = createBrowserRouter([
     element: (
       <ProtectedRoute>
         <Profile />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: '/settings', 
+    element: (
+      <ProtectedRoute>
+        <Settings />
       </ProtectedRoute>
     ),
   }

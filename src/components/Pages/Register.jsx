@@ -1,29 +1,26 @@
 import React, { useState } from "react";
-import "../Design/Register.css"; // Ensure this path matches your CSS file's location
+import "../Design/Register.css"; 
 
 function Register() {
-  // State variables for form fields
+  
   const [name, setName] = useState("");
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState("");
   const [organizationName, setOrganizationName] = useState("");
   const [headquartersAddress, setHeadquartersAddress] = useState("");
   
-  // Added a state variable for displaying messages to the user
-  const [message, setMessage] = useState("");
   
-  // Function to handle form submission
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = {
       name,
       email,
-      password, // Reminder: Implement password hashing on the server-side
+      password,
       organizationName,
       headquartersAddress,
     };
 
-    // Attempt to send the formData to the server
+   
     try {
       const response = await fetch("http://localhost:3000/register", {
         method: "POST",
@@ -37,7 +34,7 @@ function Register() {
       if (response.ok) {
         setMessage("Success: Organization registered successfully");
         console.log("Success:", data);
-        // Optionally clear the form here
+        
       } else {
         throw new Error(
           data.message || "An error occurred during registration."
@@ -67,13 +64,12 @@ function Register() {
         </div>
         <div className="form-group">
           <input
-            type="email" // Changed from "text" to "email" for proper validation and keyboard
-            id="email" // Changed from "address" to "email"
-            value={email} // Assumes you have a corresponding state variable `email`
-            onChange={(e) => setEmail(e.target.value)} // Assumes you have a setter function `setEmail`
-            required
+            type="email" 
+            id="email" 
+            value={email} 
+            onChange={(e) => setEmail(e.target.value)} 
             className="input-field"
-            placeholder="Enter your email address" // Updated placeholder text
+            placeholder="Enter your email address" 
           />
         </div>
         <div className="form-group">

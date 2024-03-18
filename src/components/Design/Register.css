@@ -28,7 +28,7 @@
   }
   
   .input-field:focus::placeholder {
-    color: transparent; /* Hide placeholder text when input is focused */
+    color: transparent; 
   }
   
   .submit-button {

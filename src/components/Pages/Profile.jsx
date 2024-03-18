@@ -11,7 +11,7 @@ const Profile = () => {
     ]);
 
     const addSkill = (newSkill) => {
-        if (newSkill.trim() !== '') { // Verificăm dacă inputul nu este gol
+        if (newSkill.trim() !== '') { 
             setSkills([...skills, newSkill]);
         }
     };
