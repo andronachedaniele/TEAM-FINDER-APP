@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import DashboardNav from '../Elements/DashboardNav';
+import Navbar from '../Elements/Navbar';
 import '../Design/Profile.css';
+import { handleLogout } from '../utils'; // Importă funcția handleLogout din utils.jsx
 
 const Profile = () => {
     const [skills, setSkills] = useState([]);
@@ -23,7 +24,7 @@ const Profile = () => {
 
     return (
         <div>
-            <DashboardNav />
+            <Navbar handleLogout={handleLogout} />
             <div className="welcome-section">
                 <h2>Welcome to your profile!</h2>
             </div>

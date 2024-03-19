@@ -1,13 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom"; 
-import '../Design/DashboardNav.css'
-import handleLogout from"../Pages/Dashboard";
+import '../Design/Navbar.css'
 import PropTypes from "prop-types"; 
 
-
-const DashboardNav = ( {handleLogout }) => {
+const Navbar = ( {handleLogout} ) => {
     return (
-        <nav className="dashboard-nav">
+        <nav className="navbar">
             <ul>
                 <li>
                     <NavLink to="/dashboard" activeClassName="active-link">Home</NavLink>
@@ -19,14 +17,14 @@ const DashboardNav = ( {handleLogout }) => {
                     <NavLink to="/settings" activeClassName="active-link">Settings</NavLink>
                 </li>
                 <li>
-                    <button className="dashboard-nav" onClick={handleLogout}>Logout</button>
+                    <button className="navbar" onClick={handleLogout}>Logout</button>
                 </li>
             </ul>
         </nav>
     );
 };
-DashboardNav.propTypes = {
+Navbar.propTypes = {
     handleLogout: PropTypes.func.isRequired
 };
 
-export default DashboardNav;
+export default Navbar;

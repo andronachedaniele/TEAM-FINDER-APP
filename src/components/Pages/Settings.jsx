@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import DashboardNav from '../Elements/DashboardNav';
+import Navbar from '../Elements/Navbar';
 import '../Design/Settings.css';
+import { handleLogout } from '../utils'; 
 
 const Settings = () => {
     const [email, setEmail] = useState('');
@@ -38,7 +39,7 @@ const Settings = () => {
 
     return (
         <div>
-            <DashboardNav />
+            <Navbar handleLogout={handleLogout} />
             <div className="settings-container">
                 <h2>Settings</h2>
                 <form onSubmit={handleSubmit} className="settings-form">

@@ -1,17 +1,19 @@
+// Dashboard.jsx
 import React, { useState, useEffect } from "react";
 import "../Design/Dashboard.css";
-import "../Design/DashboardNav.css";
+import "../Design/Navbar.css";
 import { useNavigate } from "react-router-dom";
-import DashboardNav from "../Elements/DashboardNav";
+import Navbar from "../Elements/Navbar";
 import EmployeesList from "../Elements/EmployeeList";
 import TeamRoleList from "../Elements/TeamRoleList";
 import DepartmentsList from "../Elements/DepartmentsList";
+import { handleLogout } from "../utils";
 
 const Dashboard = () => {
     const navigate = useNavigate();
     const [showEmployeeList, setShowEmployeeList] = useState(false); 
     const [ShowTeamRoleList, setShowTeamRoleList] = useState(false);
-    const [ShowDepartmentsList, setShowDepartmentsList] =useState(false);
+    const [ShowDepartmentsList, setShowDepartmentsList] = useState(false);
     const [authenticated, setAuthenticated] = useState(false); 
 
     useEffect(() => {
@@ -23,24 +25,25 @@ const Dashboard = () => {
         }
     }, []);
 
-    const handleLogout = () => {
-        localStorage.removeItem('token');
-        navigate('/');
-    };
-
     const toggleEmployeeList = () => {
         setShowEmployeeList(!showEmployeeList);
     };
+
     const toggleTeamRoleList = () => {
         setShowTeamRoleList(!ShowTeamRoleList);
-    }
+    };
+
     const toggleDepartmentsList = () => {
         setShowDepartmentsList(!ShowDepartmentsList);
     };
 
+    const onLogoutClick = () => {
+        handleLogout(navigate); 
+    };
+
     return (
         <div className="dashboard">
-            <DashboardNav handleLogout={handleLogout} />
+            <Navbar handleLogout={onLogoutClick} />
             <div className="welcome-section">
                 <h1>Welcome, User!</h1>
                 <p>This is your dashboard.</p>
@@ -62,7 +65,7 @@ const Dashboard = () => {
                     >
                         {ShowTeamRoleList ? "Hide Team Role List" : "Show Team Role List"}
                     </button>
-                    {ShowTeamRoleList && <TeamRoleList/>}
+                    {ShowTeamRoleList && <TeamRoleList />}
                 </div>
                 <div className="departments-list-container">
                     <button
@@ -71,7 +74,7 @@ const Dashboard = () => {
                     >
                         {ShowDepartmentsList ? "Hide Departments List" : "Show Departments List"}
                     </button>
-                    {ShowDepartmentsList && <DepartmentsList/>}
+                    {ShowDepartmentsList && <DepartmentsList />}
                 </div>
             </div>
         </div>
