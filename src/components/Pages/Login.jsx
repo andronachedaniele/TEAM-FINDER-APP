@@ -36,10 +36,8 @@ function Login() {
     <div className="border-container">
       <div className="login-container">
         <div className="left-side">
-          <h2>Welcome</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi consectetur eros eros,
-             vulputate ultrices massa accumsan vitae. Curabitur facilisis nisl in quam vestibulum,
-              sit amet iaculis ipsum malesuada. Aenean consectetur dictum quam, ac faucibus mi sagittis sit amet.</p>
+          <h2>Welcome!</h2>
+          <p>Turn your ideas into reality and start building successful teams with Team Finder! Simplify recruitment, coordination, and team collaboration so you can focus more time and energy on your projects, achieving exceptional results in record time!</p>
         </div>
         <div className="right-side">
           <h2>Log in</h2>

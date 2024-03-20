@@ -29,7 +29,11 @@ const Profile = () => {
                 <h2>Welcome to your profile!</h2>
             </div>
             <div className="profile-container">
-                <img src="https://i.pinimg.com/736x/c0/74/9b/c0749b7cc401421662ae901ec8f9f660.jpg" alt="Profil" className="profile-image" />
+                <div className="profile-details">
+                    <img src="https://i.pinimg.com/736x/c0/74/9b/c0749b7cc401421662ae901ec8f9f660.jpg" alt="Profil" className="profile-image" />
+                    <h3>Descriere</h3>
+                    <textarea placeholder="Introduceți detalii despre profilul dvs." className="description-input"></textarea>
+                </div>
                 <div className="skill-section">
                     <h2 className="skill-section-heading">My Skills</h2>
                     <form onSubmit={(e) => {

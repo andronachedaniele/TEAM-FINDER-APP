@@ -6,6 +6,7 @@
     padding: 30px;
     height: 325px;
     overflow-y: auto; 
+    min-height: 300px;
 }
 
 .list h2 {
@@ -13,6 +14,7 @@
 }
 
 .list ul {
+    margin-top: 20px;
     list-style-type: none; 
     padding: 0; 
     margin: 0; 
@@ -31,10 +33,27 @@
 
 .small-button {
     font-size: 12px; 
-    padding: 4px 4px; 
+    padding: 4px 40px; 
     margin: 0 10px; 
     flex: auto;
     color: black;
     width: fit-content;
     background-color:#c961d922
 }
+.small-input {
+    width: 150px; 
+    height: 30px; 
+    font-size: 12px; 
+    margin-bottom: 10px;
+}
+
+.button-margin {
+    margin-bottom: 15px; 
+    border-top: 3px solid #3b64b7a4;
+    margin-top: 15px;
+}
+
+.pagination-container {
+    position: relative;
+  }
+
