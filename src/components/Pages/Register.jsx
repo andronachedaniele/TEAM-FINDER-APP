@@ -8,7 +8,7 @@ function Register() {
   const [password, setPassword] = useState("");
   const [organizationName, setOrganizationName] = useState("");
   const [headquartersAddress, setHeadquartersAddress] = useState("");
-  
+  const [message, setMessage] = useState("")
   
   const handleSubmit = async (event) => {
     event.preventDefault();
